@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/order_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -21,6 +21,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="View Menu"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="294dp" />
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="341dp" />
+
+    <Button
+        android:id="@+id/cart_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shopping Cart"
+        tools:layout_editor_absoluteX="241dp"
+        tools:layout_editor_absoluteY="448dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order List"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="544dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="181dp"
+        android:layout_height="48dp"
+        android:text="View our selection of varying styles of pizzas!"
+        tools:layout_editor_absoluteX="199dp"
+        tools:layout_editor_absoluteY="341dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="170dp"
+        android:layout_height="49dp"
+        android:text="View your current order in the Shopping Cart!"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="448dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="264dp"
+        android:layout_height="198dp"
+        app:srcCompat="@drawable/pizza_2763171_1280"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="122dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
