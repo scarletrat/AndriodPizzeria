@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndriodPizzeria</string>
+    <string name="app_name">RUPizzeria</string>
     <string name="order_list">Order List</string>
     <string name="shopping_cart">Shopping Cart</string>
     <string name="view_menu">View Menu</string>
@@ -7,5 +7,6 @@
     <string name="view_menu_desc">View our selection of varying styles of pizzas!</string>
     <string name="shopping_cart_desc">View your current order in the Shopping Cart!</string>
     <string name="first_image">Front Page Image</string>
+    <string name="order_list_desc">Keep track of all orders placed, including browsing and canceling orders.</string>
 
 </resources>
