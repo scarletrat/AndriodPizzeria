@@ -11,56 +11,90 @@
         android:id="@+id/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to RUPizzeria!"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="89dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/title"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="92dp" />
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/menu_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="View Menu"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="341dp" />
+        android:layout_width="128dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/view_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/cart_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Shopping Cart"
-        tools:layout_editor_absoluteX="241dp"
-        tools:layout_editor_absoluteY="448dp" />
+        android:layout_width="152dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="31dp"
+        android:text="@string/shopping_cart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Order List"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="544dp" />
+        android:id="@+id/order_list"
+        android:layout_width="133dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="251dp"
+        android:text="@string/order_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="181dp"
-        android:layout_height="48dp"
-        android:text="View our selection of varying styles of pizzas!"
-        tools:layout_editor_absoluteX="199dp"
-        tools:layout_editor_absoluteY="341dp" />
+        android:layout_width="186dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="31dp"
+        android:autoSizeTextType="uniform"
+        android:text="@string/view_menu_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintStart_toEndOf="@+id/menu_button"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="170dp"
-        android:layout_height="49dp"
-        android:text="View your current order in the Shopping Cart!"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="448dp" />
+        android:layout_width="182dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="30dp"
+        android:autoSizeTextType="uniform"
+        android:text="@string/shopping_cart_desc"
+        app:layout_constraintEnd_toStartOf="@+id/cart_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu_button" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="264dp"
         android:layout_height="198dp"
-        app:srcCompat="@drawable/pizza_2763171_1280"
-        tools:layout_editor_absoluteX="73dp"
-        tools:layout_editor_absoluteY="122dp" />
+        android:layout_marginStart="73dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="@string/first_image"
+        app:layout_constraintBottom_toTopOf="@+id/menu_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name"
+        app:srcCompat="@drawable/pizza_2763171_1280" />
 </androidx.constraintlayout.widget.ConstraintLayout>
