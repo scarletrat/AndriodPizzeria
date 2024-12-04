@@ -8,5 +8,29 @@
     <string name="shopping_cart_desc">View your current order in the Shopping Cart!</string>
     <string name="first_image">Front Page Image</string>
     <string name="order_list_desc">Keep track of all orders placed, including browsing and canceling orders.</string>
+    <string name="menu">Menu</string>
+    <string name="style_type">Pizza Style &amp; Type</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="size">Choose A Size:</string>
+    <string name="crust">Crust</string>
+    <string name="aTop">Available Toppings</string>
+    <string name="sTop">Selected Toppings</string>
+    <string name="right"><![CDATA[>>]]></string>
+    <string name="left"><![CDATA[<<]]></string>
+
+    <string-array name="itemNames">
+        <item>Chicago Style Deluxe</item>
+        <item>Chicago Style BBQ Chicken</item>
+        <item>Chicago Style Meatzza</item>
+        <item>Chicago Style Build-Your-Own</item>
+        <item>New York Style Deluxe</item>
+        <item>New York Style BBQ Chicken</item>
+        <item>New York Style Meatzza</item>
+        <item>New York Style Build-Your-Own</item>
+    </string-array>
+
+    <string name="add">Add to Cart</string>
 
 </resources>

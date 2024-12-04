@@ -19,6 +19,7 @@
             android:name=".CartActivity" />
         <activity
             android:name=".OrderActivity" />
+        <activity android:name=".Menu2Activity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
