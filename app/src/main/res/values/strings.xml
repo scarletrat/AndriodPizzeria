@@ -14,7 +14,7 @@
     <string name="medium">Medium</string>
     <string name="large">Large</string>
     <string name="size">Choose A Size:</string>
-    <string name="crust">Crust</string>
+    <string name="crust">Crust: </string>
     <string name="aTop">Available Toppings</string>
     <string name="sTop">Selected Toppings</string>
     <string name="right"><![CDATA[>>]]></string>
@@ -24,13 +24,15 @@
         <item>Chicago Style Deluxe</item>
         <item>Chicago Style BBQ Chicken</item>
         <item>Chicago Style Meatzza</item>
-        <item>Chicago Style Build-Your-Own</item>
-        <item>New York Style Deluxe</item>
-        <item>New York Style BBQ Chicken</item>
-        <item>New York Style Meatzza</item>
-        <item>New York Style Build-Your-Own</item>
+        <item>Chicago Style Build Your Own</item>
+        <item>NewYork Style Deluxe</item>
+        <item>NewYork Style BBQ Chicken</item>
+        <item>NewYork Style Meatzza</item>
+        <item>NewYork Style Build Your Own</item>
     </string-array>
 
     <string name="add">Add to Cart</string>
+    <string name="price">Price: </string>
+    <string name="menu2">Verify your selection and Add to cart!</string>
 
 </resources>

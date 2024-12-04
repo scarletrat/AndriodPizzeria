@@ -1,11 +1,6 @@
 package com.example.andriodpizzeria;
 
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,16 +8,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class MenuActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
     private ArrayList<Item> items = new ArrayList<>();
-    private int [] itemImages = {R.drawable.apple, R.drawable.banana, R.drawable.grapes,
-            R.drawable.mango, R.drawable.orange, R.drawable.peach, R.drawable.pineapple,
-            R.drawable.strawberry};
+    private int [] itemImages = {R.drawable.chicagodeluxe, R.drawable.chicagobbq, R.drawable.chicagomeat,
+            R.drawable.chicagobyo, R.drawable.nydeluxe, R.drawable.nybbq, R.drawable.nymeat,
+            R.drawable.nybyo};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
