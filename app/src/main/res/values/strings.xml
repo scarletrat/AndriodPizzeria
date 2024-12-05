@@ -20,6 +20,7 @@
     <string name="right"><![CDATA[>>]]></string>
     <string name="left"><![CDATA[<<]]></string>
 
+
     <string-array name="itemNames">
         <item>Chicago Style Deluxe</item>
         <item>Chicago Style BBQ Chicken</item>
@@ -33,6 +34,9 @@
 
     <string name="add">Add to Cart</string>
     <string name="price">Price: </string>
+    <string name="name1">Name </string>
+    <string name="price2">Price </string>
+    <string name="cart">Shopping Cart </string>
     <string name="menu2">Verify your selection and Add to cart!</string>
 
 </resources>

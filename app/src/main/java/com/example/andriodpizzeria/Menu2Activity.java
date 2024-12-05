@@ -33,6 +33,8 @@ public class Menu2Activity extends AppCompatActivity {
     private String selectedItem;
     private double price = 0.0;
 
+    ShareResource resource = ShareResource.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +91,7 @@ public class Menu2Activity extends AppCompatActivity {
                 });
                 AlertDialog dialog = alert.create();
                 dialog.show();
+                resource.addCart(pizza);
             }
         });
     }
