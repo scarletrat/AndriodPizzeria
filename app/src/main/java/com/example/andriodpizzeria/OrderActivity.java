@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -51,7 +50,7 @@ public class OrderActivity extends AppCompatActivity {
     private void standby(){
         ArrayList<String> temp = new ArrayList<>();
         temp.add("No item to display");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, temp);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, temp);
         orderListView.setAdapter(adapter);
     }
 
@@ -102,7 +101,7 @@ public class OrderActivity extends AppCompatActivity {
      * Updates the listView to the spinner selection.
      */
     private void updateListView(){
-        ArrayAdapter<Pizza> adapter = new ArrayAdapter<Pizza>(this, android.R.layout.simple_list_item_1, orderlist.get(0).getPizzas());
+        ArrayAdapter<Pizza> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, orderlist.get(0).getPizzas());
         orderListView.setAdapter(adapter);
         orderNumSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -129,7 +128,7 @@ public class OrderActivity extends AppCompatActivity {
                 break;
             }
         }
-        ArrayAdapter<Pizza> adapter = new ArrayAdapter<Pizza>(this, android.R.layout.simple_list_item_1, pizzas);
+        ArrayAdapter<Pizza> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, pizzas);
         orderListView.setAdapter(adapter);
     }
 

@@ -4,20 +4,16 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NavUtils;
 
 import java.util.ArrayList;
 
@@ -47,7 +43,6 @@ public class CartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cart);
         getId();
         updateCost();
-        ActionBar actionBar = getSupportActionBar();
         if(!pizzas.isEmpty()){
             normal();
         }else {
@@ -110,7 +105,7 @@ public class CartActivity extends AppCompatActivity {
      * If last pizza is removed go to notNormal()
      */
     private void removeClick(){
-        ArrayAdapter<Pizza> adapter = new ArrayAdapter<Pizza>(this, android.R.layout.simple_list_item_1, pizzas);
+        ArrayAdapter<Pizza> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, pizzas);
         cartList.setAdapter(adapter);
         cartList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -151,7 +146,7 @@ public class CartActivity extends AppCompatActivity {
      * Normal operation where there's item on the list.
      */
     private void normal(){
-        ArrayAdapter<Pizza> adapter = new ArrayAdapter<Pizza>(this, android.R.layout.simple_list_item_1, pizzas);
+        ArrayAdapter<Pizza> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, pizzas);
         removeClick();
         addOrder.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,7 +176,7 @@ public class CartActivity extends AppCompatActivity {
     public void notNormal(){
         ArrayList<String> temp = new ArrayList<>();
         temp.add("No item to display");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, temp);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, temp);
         cartList.setAdapter(adapter);
         removePizza.setOnClickListener(new View.OnClickListener() {
             @Override
