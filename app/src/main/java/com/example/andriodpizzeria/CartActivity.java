@@ -21,6 +21,12 @@ import androidx.core.app.NavUtils;
 
 import java.util.ArrayList;
 
+/**
+ * This is the controller for activity_cart.xml. View your pizzas on shopping cart
+ * And remove pizza and placed the order.
+ * @author Gordon Lin, Christopher Lee modified Dec. 05, 2024
+ */
+
 public class CartActivity extends AppCompatActivity {
 
     private EditText editSubtotal;
@@ -128,9 +134,9 @@ public class CartActivity extends AppCompatActivity {
                         if(pizzas.isEmpty()){
                             notNormal();
                         }
-                        Toast.makeText(getApplicationContext(), "Removed Pizza.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CartActivity.this, "Removed Pizza.", Toast.LENGTH_SHORT).show();
                     }).setPositiveButton("No", (dialog, which) -> {
-                        Toast.makeText(getApplicationContext(), "Clicked NO", Toast.LENGTH_LONG).show();
+                        Toast.makeText(CartActivity.this, "Clicked NO", Toast.LENGTH_SHORT).show();
                     });
                     AlertDialog dialog = alert.create();
                     dialog.show();
@@ -191,6 +197,9 @@ public class CartActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * When presed back button, go to parent activity.
+     */
     @SuppressLint("MissingSuperCall")
     @Override
     public void onBackPressed() {

@@ -2,10 +2,22 @@ package com.example.andriodpizzeria;
 
 import java.util.ArrayList;
 
+/**
+ * This class implements the Singleton Design Pattern
+ * An instance of this class is holding the resources shared by other objects/threads
+ * @author Christopher Lee, modified Dec. 05, 2024
+ */
 public class ShareResource {
     private static ShareResource resource;
     private ArrayList<Order> orderlist = new ArrayList<>();
     private ArrayList<Pizza> pizzas = new ArrayList<>();
+
+    /**
+     * Private constructor
+     */
+    private ShareResource() {
+        //do nothing to prevent a public default constructor being created by JVM
+    }
 
     /**
      * Creates instance of resource

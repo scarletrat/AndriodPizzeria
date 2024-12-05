@@ -19,6 +19,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * This is the controller for activity_menu2.xml. Verify and choose the pizza size to add to cart.
+ * @author Gordon Lin, Christopher Lee, modified Dec. 05, 2024
+ */
+
 public class Menu2Activity extends AppCompatActivity {
     private final ArrayList<Topping> available = new ArrayList<>(Arrays.asList(Topping.values()));
     private final ArrayList<Topping> selected = new ArrayList<>();
@@ -59,16 +64,28 @@ public class Menu2Activity extends AppCompatActivity {
         addClick();
         sizeClick();
     }
+
+    /**
+     * Go to main activity
+     * @param view the view
+     */
     public void mainActivity(View view){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Go to cart activity
+     * @param view the view
+     */
     public void cartActivity(View view){
         Intent intent = new Intent(this, CartActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Change the size of the pizza based on the chosen radio button
+     */
     private void sizeClick(){
         sizeGroup.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId != -1) { // Make sure a valid option is selected
@@ -85,10 +102,13 @@ public class Menu2Activity extends AppCompatActivity {
                 double roundedNumber = Math.round(price * 100.0) / 100.0;
                 String output = "$: "+ roundedNumber;
                 priceText.setText(output);
-                Toast.makeText(Menu2Activity.this, "Selected: " + selectedText, Toast.LENGTH_SHORT).show();
             }
         });
     }
+
+    /**
+     * Add pizza to cart button
+     */
     private void addClick(){
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,6 +129,10 @@ public class Menu2Activity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * Output the crust in the editCrust textview
+     */
     private void updateCrust(){
         String pizzaType = getType();
         String[] parts = pizzaType.split(" ");
@@ -139,6 +163,10 @@ public class Menu2Activity extends AppCompatActivity {
             }
         }
     }
+
+    /**
+     * Updates the view, calling helper methods.
+     */
     private void getOptions(){
         updatePrice();
         String pizzaType = getType();
@@ -156,6 +184,11 @@ public class Menu2Activity extends AppCompatActivity {
             updateMeat(style);
         }
     }
+
+    /**
+     * Update the view to Deluxe pizza and input style.
+     * @param style the style.
+     */
     private void updateDeluxe(String style){
         if(style.equalsIgnoreCase("Chicago")){
             PizzaFactory temp = new ChicagoPizza();
@@ -173,6 +206,11 @@ public class Menu2Activity extends AppCompatActivity {
         ArrayAdapter<Topping> toppingAdapter2 = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, selected);
         listView2.setAdapter(toppingAdapter2);
     }
+
+    /**
+     * Update the view to BBQChicken pizza and input style.
+     * @param style the style.
+     */
     private void updateBBQ(String style){
         if(style.equalsIgnoreCase("Chicago")){
             PizzaFactory temp = new ChicagoPizza();
@@ -190,6 +228,11 @@ public class Menu2Activity extends AppCompatActivity {
         ArrayAdapter<Topping> toppingAdapter2 = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, selected);
         listView2.setAdapter(toppingAdapter2);
     }
+
+    /**
+     * Update the view to Meatzza pizza and input style.
+     * @param style the style.
+     */
     private void updateMeat(String style){
         if(style.equalsIgnoreCase("Chicago")){
             PizzaFactory temp = new ChicagoPizza();
@@ -207,6 +250,10 @@ public class Menu2Activity extends AppCompatActivity {
         ArrayAdapter<Topping> toppingAdapter2 = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, selected);
         listView2.setAdapter(toppingAdapter2);
     }
+
+    /**
+     * Set the IDs
+     */
     private void getID(){
         listView = findViewById(R.id.listView);
         listView2 = findViewById(R.id.cartButton);
@@ -225,6 +272,16 @@ public class Menu2Activity extends AppCompatActivity {
         goMenu = findViewById(R.id.menutoMain);
         goCart = findViewById(R.id.menutoCart);
     }
+
+    /**
+     * Update the listview of toppings based on the pizza type and style chosen
+     * @param style the style
+     */
+
+    /**
+     * This is for BYO pizza where you select toppings. Update the two listviews of toppings.
+     * @param style the pizza style.
+     */
     private void updateList(String style){
         if(style.equalsIgnoreCase("Chicago")){
             PizzaFactory temp = new ChicagoPizza();
@@ -261,6 +318,11 @@ public class Menu2Activity extends AppCompatActivity {
             updateToppingPrice(false);
         });
     }
+
+    /**
+     * Update the pizza price based on topping add or remove.
+     * @param add boolean true means add one topping, false means remove one topping
+     */
     private void updateToppingPrice(boolean add){
         if(add){
             price = price + 1.69;
@@ -271,6 +333,10 @@ public class Menu2Activity extends AppCompatActivity {
         String output = "$: "+ roundedNumber;
         priceText.setText(output);
     }
+
+    /**
+     * Get the price of the pizza and output it in EditText. The original price before any changes.
+     */
     private void updatePrice(){
         String pizzaType = getType();
         String []parts = pizzaType.split(" ");
@@ -288,6 +354,11 @@ public class Menu2Activity extends AppCompatActivity {
         String output = "$: "+ roundedNumber;
         priceText.setText(output);
     }
+
+    /**
+     * Get the pizza type and style.
+     * @return the type and style in string. Style + Type.
+     */
     private String getType(){
         String[] parts = selectedItem.split(" ");
         String style;

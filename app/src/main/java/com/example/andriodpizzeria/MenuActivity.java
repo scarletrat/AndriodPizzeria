@@ -9,6 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+/**
+ * This is the controller for activity_menu.xml. Choose a pizza type and style
+ * And go to activity_menu2.xml to verify the choice to add to cart.
+ * @author Gordon Lin, modified Dec. 05, 2024
+ */
 public class MenuActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;

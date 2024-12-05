@@ -15,6 +15,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+/**
+ * This is an Adapter class to be used to instantiate an adapter for the RecyclerView.
+ * Extends RecyclerView.Adapter. use the data type <ItemAdapter.ItemHolder>.
+ * Defined a constructor for the ItemAdapter and an inner class ItemsHolder (a static class)
+ * The ItemsHolder class must extend RecyclerView.ViewHolder.
+ * @author Gordon Lin, modified Dec. 05, 2024
+ */
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>{
     private Context context; //need the context to inflate the layout
     private ArrayList<Item> items; //need the data binding to each row of RecyclerView
@@ -28,9 +35,9 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
 
     /**
      * This method will inflate the row layout for the items in the RecyclerView
-     * @param parent
-     * @param viewType
-     * @return
+     * @param parent the parent
+     * @param viewType the viewType
+     * @return ItemsHolder
      */
     @NonNull
     @Override
@@ -81,8 +88,6 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
             im_item = itemView.findViewById(R.id.im_item);
         }
     }
-    public String getSelectedItemName() {
-        return selectedItemName;
-    }
+
 }
 

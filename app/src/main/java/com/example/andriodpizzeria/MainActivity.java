@@ -10,6 +10,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+/**
+ * This is the controller for activity_main.xml, the main activity.
+ * Navigate to shopping cart, menu, and order list.
+ * @author Gordon Lin, modified Dec. 05, 2024
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -19,16 +24,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    /**
+     * Navigate to menu.
+     * @param view the view.
+     */
     public void menuActivity(View view){
         Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Navigate to shopping cart.
+     * @param view the view.
+     */
     public void cartActivity(View view){
         Intent intent = new Intent(this, CartActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Navigate to order list.
+     * @param view the view.
+     */
     public void orderActivity(View view){
         Intent intent = new Intent(this, OrderActivity.class);
         startActivity(intent);

@@ -17,6 +17,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
+/**
+ * This is the controller for activity_order.xml. View the orders placed
+ * And cancel an order.
+ * @author Gordon Lin, modified Dec. 05, 2024
+ */
 public class OrderActivity extends AppCompatActivity {
 
     private Button cancelButton;
