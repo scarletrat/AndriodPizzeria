@@ -1,6 +1,7 @@
 package com.example.andriodpizzeria;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,8 @@ public class Menu2Activity extends AppCompatActivity {
     private TextView textView;
     private RadioGroup sizeGroup;
     private Button addButton;
+    private Button goCart;
+    private Button goMenu;
     private Pizza pizza = null;
     private String selectedItem;
     private double price = 0.0;
@@ -56,6 +59,16 @@ public class Menu2Activity extends AppCompatActivity {
         addClick();
         sizeClick();
     }
+    public void mainActivity(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void cartActivity(View view){
+        Intent intent = new Intent(this, CartActivity.class);
+        startActivity(intent);
+    }
+
     private void sizeClick(){
         sizeGroup.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId != -1) { // Make sure a valid option is selected
@@ -81,17 +94,18 @@ public class Menu2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(Menu2Activity.this);
-                alert.setTitle("Alert");
+                alert.setTitle("Confirmation");
                 alert.setMessage("Adding " +pizza+" to Cart!");
                 //anonymous inner class to handle the onClick event of YES or NO.
-                alert.setPositiveButton("Yes", (dialog,which)-> {
+                alert.setNegativeButton("Yes", (dialog,which)-> {
                     Toast.makeText(getApplicationContext(), "you clicked YES", Toast.LENGTH_LONG).show();
-                }).setNegativeButton("No", (dialog, which) -> {
+                    resource.addCart(pizza);
+                    ArrayList<Pizza> x = resource.getPizzas();
+                }).setPositiveButton("No", (dialog, which) -> {
                     Toast.makeText(getApplicationContext(), "you clicked NO", Toast.LENGTH_LONG).show();
                 });
                 AlertDialog dialog = alert.create();
                 dialog.show();
-                resource.addCart(pizza);
             }
         });
     }
@@ -195,7 +209,7 @@ public class Menu2Activity extends AppCompatActivity {
     }
     private void getID(){
         listView = findViewById(R.id.listView);
-        listView2 = findViewById(R.id.listView2);
+        listView2 = findViewById(R.id.cartButton);
         listView.setBackgroundColor(Color.LTGRAY);  // Set the background color to light gray
         listView2.setBackgroundColor(Color.LTGRAY);  // Set the background color to light gray
         editCrust = findViewById(R.id.editCrust);
@@ -208,6 +222,8 @@ public class Menu2Activity extends AppCompatActivity {
         sizeGroup = findViewById(R.id.sizeGroup);
         sizeGroup.check(R.id.smallButton);
         addButton = findViewById(R.id.addButton);
+        goMenu = findViewById(R.id.menutoMain);
+        goCart = findViewById(R.id.menutoCart);
     }
     private void updateList(String style){
         if(style.equalsIgnoreCase("Chicago")){
@@ -234,7 +250,6 @@ public class Menu2Activity extends AppCompatActivity {
             toppingAdapter.notifyDataSetChanged();
             toppingAdapter2.notifyDataSetChanged();
             updateToppingPrice(true);
-            Toast.makeText(Menu2Activity.this, "Added: " + selectedTopping.name(), Toast.LENGTH_SHORT).show();
         });
         listView2.setOnItemClickListener((parent, view, position, id) -> {
             Topping selectedTopping = selected.get(position);
@@ -244,7 +259,6 @@ public class Menu2Activity extends AppCompatActivity {
             toppingAdapter.notifyDataSetChanged();
             toppingAdapter2.notifyDataSetChanged();
             updateToppingPrice(false);
-            Toast.makeText(Menu2Activity.this, "Removed: " + selectedTopping.name(), Toast.LENGTH_SHORT).show();
         });
     }
     private void updateToppingPrice(boolean add){

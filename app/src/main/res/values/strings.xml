@@ -39,4 +39,18 @@
     <string name="cart">Shopping Cart </string>
     <string name="menu2">Verify your selection and Add to cart!</string>
 
+    <string name="removePizza">Remove Pizza</string>
+    <string name="addOrder">Place Order</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="tax">Sales Tax</string>
+    <string name="total">Total</string>
+    <string name="subtotal1">Subtotal:</string>
+    <string name="tax1">Sales Tax:</string>
+    <string name="total1">Total:</string>
+    <string name="goCart">Go to Cart</string>
+    <string name="goMain">Go to Main</string>
+    <string name="orderNum">Order Number:</string>
+    <string name="orderTotal">Order Total: </string>
+    <string name="cancelOrder">Cancel Order</string>
+
 </resources>

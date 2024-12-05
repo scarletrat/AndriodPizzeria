@@ -54,5 +54,6 @@ public class ShareResource {
             order.setOrderNumber(orderlist.get(size).getOrderNumber()+1);
         }
         orderlist.add(order);
+        pizzas = new ArrayList<>();
     }
 }

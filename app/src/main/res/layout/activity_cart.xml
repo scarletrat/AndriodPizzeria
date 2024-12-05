@@ -4,22 +4,126 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CartActivity">
+    tools:context=".CartActivity"
+    android:background="#E8CFCB">
+
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="410dp"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="642dp"
+        android:layout_marginBottom="12dp"
+        android:background="#d1aa62"
         android:text="@string/cart"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:background="#d1aa62"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cartList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/cartList"
+        android:layout_width="323dp"
+        android:layout_height="349dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginBottom="23dp"
+        app:layout_constraintBottom_toTopOf="@+id/removePizza"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="31dp"
+        android:text="@string/subtotal1"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cartList" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="39dp"
+        android:text="@string/tax1"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="116dp"
+        android:text="@string/total1"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <Button
+        android:id="@+id/removePizza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="25dp"
+        android:text="@string/removePizza"
+        app:layout_constraintBottom_toTopOf="@+id/addOrder"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/addOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="136dp"
+        android:text="@string/addOrder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/editSubtotal"
+        android:layout_width="94dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="44dp"
+        android:ems="10"
+        android:hint="@string/subtotal"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/removePizza"
+        app:layout_constraintTop_toBottomOf="@+id/cartList" />
+
+    <EditText
+        android:id="@+id/editTax"
+        android:layout_width="94dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="44dp"
+        android:ems="10"
+        android:hint="@string/tax"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/addOrder"
+        app:layout_constraintTop_toBottomOf="@+id/editSubtotal" />
+
+    <EditText
+        android:id="@+id/editTotal"
+        android:layout_width="94dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="110dp"
+        android:ems="10"
+        android:hint="@string/total"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/addOrder"
+        app:layout_constraintTop_toBottomOf="@+id/editTax" />
 </androidx.constraintlayout.widget.ConstraintLayout>

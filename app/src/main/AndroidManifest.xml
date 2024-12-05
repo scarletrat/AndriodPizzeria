@@ -16,11 +16,12 @@
             android:name=".MenuActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".CartActivity" />
+            android:name=".CartActivity"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".OrderActivity" />
         <activity android:name=".Menu2Activity"
-            android:parentActivityName=".Menu2Activity"/>
+            android:parentActivityName=".MenuActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
