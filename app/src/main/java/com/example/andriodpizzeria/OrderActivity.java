@@ -30,7 +30,13 @@ public class OrderActivity extends AppCompatActivity {
     ShareResource resource = ShareResource.getInstance();
     ArrayList<Order> orderlist = resource.getOrderlist();
 
-
+    /**
+     * initializes UI and is called when the activity is created
+     * @param savedInstanceState If the activity is being re-initialized after
+     *     previously being shut down then this Bundle contains the data it most
+     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,11 +115,13 @@ public class OrderActivity extends AppCompatActivity {
                 String selectedOption = parent.getItemAtPosition(position).toString();
                 int number = Integer.parseInt(selectedOption);
                 setListView(number);
+                updatePrice();
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+
     }
 
     /**
